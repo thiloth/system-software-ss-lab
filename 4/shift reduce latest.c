@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 int z=0,i=0,j=0,c=0;
-char a[16],ac[20],stk[15],act[10];
+char a[20],ac[20],stk[20],act[20];
 void check();
 void main()
 {
