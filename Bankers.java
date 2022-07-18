@@ -70,17 +70,17 @@ public void algorithm() {
           available[0][j] = available[0][j] + allocation[i][j];
        }
       }
-  }
-  if(!allocated) break; 
+    }
+    if(!allocated) break; 
   }
   if(c == np)System.out.println("\n Safely Allocated.");
   else
   System.out.println("Unsafe allocation");
- }
+}
 public static void main(String args[]) 
- {
+{
   Bankers obj = new Bankers();
   obj.input();
   obj.algorithm();
- }
+}
 }
