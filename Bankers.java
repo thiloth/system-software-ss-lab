@@ -49,33 +49,38 @@ break;
 return flag;
 }
 public void algorithm() {
-cal_need();
-int c = 0;
-boolean status[] = new boolean[np];
-while(c<np) {
-boolean allocated = false;
-boolean ret;
-for(int i=0;i<np;i++) {
-ret = check(i);
-if(!status[i] && ret) {
-status[i] = true;
-allocated =true;
-c++;
-System.out.println("Allocated Process: " +i);
-for(int j=0;j<nr;j++) {
-available[0][j] = available[0][j] + allocation[i][j];
-}
-}
-}
-if(!allocated) break;
-}
-if(c == np)System.out.println("\n Safely Allocated.");
-else
-System.out.println("Unsafe allocation");
-}
-public static void main(String args[]) {
-Bankers obj = new Bankers();
-obj.input();
-obj.algorithm();
-}
+  cal_need();
+  int c = 0;
+  boolean status[] = new boolean[np];
+  while(c<np) 
+  {
+    boolean allocated = false;
+    boolean ret;
+    for(int i=0;i<np;i++) 
+    {
+     ret = check(i);
+      if(!status[i] && ret) 
+      {
+        status[i] = true;
+        allocated =true;
+        c++;
+       System.out.println("Allocated Process: " +i);
+       for(int j=0;j<nr;j++) 
+       {
+          available[0][j] = available[0][j] + allocation[i][j];
+       }
+      }
+  }
+  if(!allocated) break; 
+  }
+  if(c == np)System.out.println("\n Safely Allocated.");
+  else
+  System.out.println("Unsafe allocation");
+ }
+public static void main(String args[]) 
+ {
+  Bankers obj = new Bankers();
+  obj.input();
+  obj.algorithm();
+ }
 }
